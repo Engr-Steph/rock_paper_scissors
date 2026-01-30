@@ -1,41 +1,32 @@
-# rock_paper_scissors
+# rock_paper_scissor
 ## Game Logic (Pseudocode)
-
 START
-Initialize choices = ["rock", "paper", "scissors"]
+DEFINE getComputerChoice
+- Randomly return "rock", "paper", or "scissors"
+END FUNCTION
 
-Prompt user to select rock, paper, or scissors
-IF user input is invalid  
-    Show error message  
-    END game  
+DEFINE getHumanChoice
+- Prompt user to enter "rock", "paper", or "scissors"
+- Convert input to lowercase
+- RETURN user choice
+END FUNCTION
 
-Generate random computer choice from choices array
-IF user choice equals computer choice  
-    Result = "Tie"  
+DEFINE playRound(humanChoice, computerChoice)
+- Compare humanChoice and computerChoice
+- Determine round winner or tie
+- Update scores
+- Display round result
+END FUNCTION
 
-ELSE IF  
-    (user is rock AND computer is scissors) OR  
-    (user is paper AND computer is rock) OR  
-    (user is scissors AND computer is paper)  
-    Result = "User wins"  
+DEFINE playGame
+- Initialize humanScore and computerScore to 0
+- Play 5 rounds:
+    - Get human choice
+    - Get computer choice
+    - Play round
+- Display final scores
+- Declare overall winner or tie
+END FUNCTION
 
-ELSE  
-    Result = "Computer wins"  
-
-Display:
-- User choice
-- Computer choice
-- Result
+Call playGame()
 END
-
-
-## Development Approach
-The project was built using task decomposition:
-1. Implement core game logic
-2. Generate computer choice
-3. Handle win/lose/tie conditions
-4. Add score tracking
-## 5. Build user interface
-## 6. Connect logic to UI
-## 7. Final styling and polish
-
